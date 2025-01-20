@@ -6,7 +6,6 @@ import dotenv from "dotenv";
 dotenv.config();
 
 async function db() {
-  console.log(process.env.MONGODB_URI);
   try {
     await mongoose
       .connect(process.env.MONGODB_URI)
