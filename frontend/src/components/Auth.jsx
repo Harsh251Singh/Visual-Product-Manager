@@ -61,7 +61,7 @@ const Auth = () => {
       const response = await axios.post(`${apiUrl}/api/register`, signupData);
       if (response.data.success) {
         const name = response.data.data.name;
-        Cookies.set("sessionEmail", loginData.email, {
+        Cookies.set("sessionEmail", signupData.email, {
           path: "/",
           secure: true,
           expires: 1,

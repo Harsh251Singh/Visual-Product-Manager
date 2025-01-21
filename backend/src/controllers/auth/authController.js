@@ -4,7 +4,7 @@ import bcryptjs from "bcryptjs";
 export const register = async (req, res) => {
   const { name, email, password } = req.body;
   try {
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword = await bcryptjs.hash(password, 10);
     const user = new UserModel({ name, email, password: hashedPassword });
     await user.save();
     res.status(201).json({
